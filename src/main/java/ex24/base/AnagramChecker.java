@@ -5,6 +5,7 @@
 
 package ex24.base;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AnagramChecker {
@@ -15,11 +16,7 @@ public class AnagramChecker {
     System.out.println("Enter two strings, and I shall tell you if they are anagrams.");
     String wordA = anagram.getFirst();
     String wordB = anagram.getSecond();
-    System.out.print("\"" + wordA + "\" and \"" + wordB + "\" are ");
-    if (!anagram.isAnagram(wordA, wordB)) {
-      System.out.print("not ");
-    }
-    System.out.println("anagrams.");
+    System.out.println(anagram.result(wordA, wordB));
   }
 
   public String getFirst() {
@@ -33,16 +30,30 @@ public class AnagramChecker {
   }
 
   public boolean isAnagram(String wordA, String wordB) {
-    int i;
-    if (wordA.length() != wordB.length()) {
+    // Creates versions of the strings without spaces and uniform lower case letters. This ensures sentence anagrams
+    // such as the Tom Riddle case shown in class can still count, while not altering single word anagrams at all.
+
+    String tempA = wordA.toLowerCase().replace(" ", "");
+    String tempB = wordB.toLowerCase().replace(" ", "");
+
+    if (tempA.length() != tempB.length()) {
       return false;
     }
 
-    for (i = 0; i < wordA.length(); i++) {
-      if (!wordB.contains(""+wordA.charAt(i))) {
-        return false;
-      }
+    char[] chA = tempA.toCharArray();
+    char[] chB = tempB.toCharArray();
+
+    Arrays.sort(chA);
+    Arrays.sort(chB);
+
+    return Arrays.equals(chA, chB);
+  }
+
+  public String result(String wordA, String wordB) {
+    String output = "\"" + wordA + "\" and \"" + wordB + "\" are ";
+    if (!isAnagram(wordA, wordB)) {
+      output += "not ";
     }
-    return true;
+    return output + "anagrams.";
   }
 }
