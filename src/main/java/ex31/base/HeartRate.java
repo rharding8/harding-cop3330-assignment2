@@ -54,8 +54,8 @@ public class HeartRate {
     }
   }
 
-  public long getTargetRate(int age, int rate, int i) {
+  public int getTargetRate(int age, int rate, int i) {
     double intensity = i / 100.0;
-    return Math.round((((220 - age) - rate) * intensity) + rate);
+    return (int) Math.round((((220 - age) - rate) * intensity) + rate);
   }
 }
