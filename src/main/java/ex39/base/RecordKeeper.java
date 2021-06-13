@@ -1,14 +1,16 @@
 package ex39.base;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class RecordKeeper {
-  private final ArrayList<Map<String, String>> records = new ArrayList<>();
+  private final ArrayList<Map<String, String>> records;
+
+  public RecordKeeper(ArrayList<Map<String, String>> records) {
+    this.records = new ArrayList<>(records);
+  }
 
   public RecordKeeper() {
+    records = new ArrayList<>();
     records.add(new HashMap<>());
     records.get(0).put("firstName", "John");
     records.get(0).put("lastName", "Johnson");

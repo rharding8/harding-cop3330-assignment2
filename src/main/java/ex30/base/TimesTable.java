@@ -3,21 +3,29 @@ package ex30.base;
 public class TimesTable {
   public static void main(String[] args) {
     TimesTable table = new TimesTable();
-    System.out.println(table.getTable(12));
+    int[][] tableArr = table.makeTable(12);
+    table.printTable(tableArr);
   }
 
-  public String getTable(int n) {
+  public int[][] makeTable(int n) {
+    int[][] table = new int[n][n];
     int i;
     int j;
-    String output = "";
 
-    for (i = 1; i <= n; i++) {
-      for (j = 1; j <=n; j++) {
-        output += String.format("%7d", i * j);
+    for (i = 0; i < n; i++) {
+      for (j = 0; j < n; j++) {
+        table[i][j] = (i + 1) * (j + 1);
       }
-      output += String.format("%n");
     }
+    return table;
+  }
 
-    return output;
+  public void printTable(int[][] table) {
+    for (int[] row: table) {
+      for (int cell: row) {
+        System.out.printf("%7d", cell);
+      }
+      System.out.println();
+    }
   }
 }

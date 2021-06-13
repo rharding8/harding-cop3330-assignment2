@@ -6,9 +6,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RecordKeeper {
-  private final ArrayList<Map<String, String>> records = new ArrayList<>();
+  private final ArrayList<Map<String, String>> records;
+
+  public RecordKeeper(ArrayList<Map<String, String>> records) {
+    this.records = new ArrayList<>(records);
+  }
 
   public RecordKeeper() {
+    records = new ArrayList<>();
     records.add(new HashMap<>());
     records.get(0).put("firstName", "John");
     records.get(0).put("lastName", "Johnson");
@@ -48,6 +53,20 @@ public class RecordKeeper {
 
   public void sortRecords() {
     records.sort(Comparator.comparing(o -> o.get("lastName")));
+  }
+
+  public void filterRecords(String search) {
+    int i;
+    for (i = 0; i < records.size(); i++) {
+      if (records.get(i).get("firstName").toLowerCase().contains(search.toLowerCase())) {
+        continue;
+      }
+      else if (records.get(i).get("lastName").toLowerCase().contains(search.toLowerCase())) {
+        continue;
+      }
+      records.remove(i);
+      i--;
+    }
   }
 
   public ArrayList<Map<String, String>> getRecords() {

@@ -10,7 +10,7 @@ public class ListCreator {
     ListCreator newList = new ListCreator();
     int[] numbers = newList.getList();
     ListFilter filter = new ListFilter();
-    newList.printList(filter.filterEvenNumbers(numbers));
+    System.out.println(newList.listString(filter.filterEvenNumbers(numbers)));
   }
 
   public int[] getList() {
@@ -19,12 +19,15 @@ public class ListCreator {
     return Arrays.stream(n.split(" ")).mapToInt(Integer::parseInt).toArray();
   }
 
-  public void printList(int[] list) {
+  public String listString(int[] list) {
     int i;
-    System.out.print(list[0]);
-    for (i = 1; i < list.length; i++) {
-      System.out.print(" " + list[i]);
+    if (list.length == 0) {
+      return "";
     }
-    System.out.println();
+    String output = "" + list[0] ;
+    for (i = 1; i < list.length; i++) {
+      output += " " + list[i];
+    }
+    return output;
   }
 }
