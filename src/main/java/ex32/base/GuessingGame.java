@@ -6,6 +6,10 @@ public class GuessingGame {
   Scanner input = new Scanner(System.in);
   private int difficulty;
 
+  public GuessingGame(int difficulty) {
+    this.difficulty = difficulty;
+  }
+
   public void play() {
     int min = 1;
     int max = (int) Math.pow(10, difficulty);
@@ -38,7 +42,4 @@ public class GuessingGame {
     System.out.println("You got it in " + count + " guesses!");
   }
 
-  public void setDifficulty(int difficulty) {
-    this.difficulty = difficulty;
-  }
 }

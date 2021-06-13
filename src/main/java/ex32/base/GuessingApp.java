@@ -8,10 +8,9 @@ public class GuessingApp {
   public static void main(String[] args) {
     System.out.println("Let's play Guess the Number!");
     GuessingApp app = new GuessingApp();
-    GuessingGame game = new GuessingGame();
     boolean flag = true;
     while (flag) {
-      game.setDifficulty(app.getDiff());
+      GuessingGame game = new GuessingGame(app.getDiff());
       game.play();
       flag = app.playAgain();
     }
@@ -20,7 +19,7 @@ public class GuessingApp {
   public int getDiff() {
     String n;
     while (true) {
-      System.out.println("Enter the Difficulty Level (1, 2, or 3): ");
+      System.out.print("Enter the Difficulty Level (1, 2, or 3): ");
       n = input.nextLine();
       try {
         Integer.parseInt(n);

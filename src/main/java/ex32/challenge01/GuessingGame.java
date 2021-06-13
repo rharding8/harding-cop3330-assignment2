@@ -4,17 +4,21 @@ import java.util.Scanner;
 
 public class GuessingGame {
   Scanner input = new Scanner(System.in);
-  private int difficulty;
+  private final int difficulty;
+
+  public GuessingGame(int difficulty) {
+    this.difficulty = difficulty;
+  }
 
   public void play() {
     int min = 1;
     int max = (int) Math.pow(10, difficulty);
     int count = 0;
-    int guess;
+    int guess = 0;
     int myNum = (int) Math.floor(Math.random() * (max - min + 1) + min);
     String response;
     System.out.print("I have my number. What's your guess? ");
-    while (true) {
+    do {
       response = input.nextLine();
       count++;
       try {
@@ -25,26 +29,32 @@ public class GuessingGame {
         continue;
       }
       guess = Integer.parseInt(response);
-      if (guess < myNum) {
-        System.out.print("Too low, guess again: ");
-      }
-      else if (guess > myNum) {
-        System.out.print("Too high, guess again: ");
-      }
-      else {
-        break;
-      }
+    } while (checkNumber(myNum, guess));
+    System.out.println(message(count));
+  }
+
+  public boolean checkNumber(int actualNum, int guessNum) {
+    if (guessNum < actualNum) {
+      System.out.print("Too low, guess again: ");
+      return true;
     }
-    System.out.print("You got it in " + count + " guesses! ");
-    switch (count) {
-      case 1 -> System.out.println("You're a mind reader!");
-      case 2, 3 -> System.out.println("Most impressive.");
-      case 4, 5, 6 -> System.out.println("You can do better than that.");
-      default -> System.out.println("Better luck next time.");
+    else if (guessNum > actualNum) {
+      System.out.print("Too high, guess again: ");
+      return true;
+    }
+    else {
+      return false;
     }
   }
 
-  public void setDifficulty(int difficulty) {
-    this.difficulty = difficulty;
+  public String message(int count) {
+    String output = "You got it in " + count + " guesses! ";
+    switch (count) {
+      case 1 -> output += "You're a mind reader!";
+      case 2, 3 -> output += "Most impressive.";
+      case 4, 5, 6 -> output += "You can do better than that.";
+      default -> output += "Better luck next time.";
+    }
+    return output;
   }
 }

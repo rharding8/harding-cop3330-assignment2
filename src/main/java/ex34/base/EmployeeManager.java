@@ -9,14 +9,23 @@ public class EmployeeManager {
     EmployeeManager manage = new EmployeeManager();
     String[] employeeList = {"Ridley Scott", "James Cameron", "Zack Snyder", "Christopher Nolan", "Sam Raimi"};
     Employee employees = new Employee(employeeList);
-    employees.printList();
+    manage.printList(employees.getList());
     String name = manage.getName();
     employees.remove(name);
-    employees.printList();
+    manage.printList(employees.getList());
   }
 
   public String getName() {
     System.out.print("Enter an employee name to remove: ");
     return input.nextLine();
+  }
+
+  public void printList(String[] list) {
+    System.out.printf("There are %d employees:%n", list.length);
+    int i;
+    for (i = 0; i < list.length; i++) {
+      System.out.printf("%s%n", list[i]);
+    }
+    System.out.println();
   }
 }

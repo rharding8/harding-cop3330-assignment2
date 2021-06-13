@@ -1,41 +1,27 @@
 package ex34.base;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Employee {
-  private String[] list;
+  private final ArrayList<String> list = new ArrayList<>();
 
   public Employee(String[] list) {
-    this.list = list;
-  }
-
-  public void printList() {
-    System.out.printf("There are %d employees:%n", list.length);
-    int i;
-    for (i = 0; i < list.length; i++) {
-      if (!list[i].equalsIgnoreCase("")) {
-        System.out.printf("%s%n", list[i]);
-      }
-    }
-    System.out.println();
+    Collections.addAll(this.list, list);
   }
 
   public void remove(String name) {
-    int i = 0;
-    int j = 0;
-    while (!list[i].equalsIgnoreCase(name)) {
-      i++;
-      if (i == list.length) {
-        System.out.println("Name not found.");
+    int i;
+    for (i = 0; i < list.size(); i++) {
+      if (list.get(i).equalsIgnoreCase(name)) {
+        list.remove(i);
         return;
       }
     }
-    list[i] = "";
-    String[] temp = new String[list.length - 1];
-    for (i = 0; i < list.length; i++) {
-      if (!list[i].equalsIgnoreCase("")) {
-        temp[j] = list[i];
-        j++;
-      }
-    }
-    list = temp;
+    System.out.println("ERROR: Name not found!");
+  }
+
+  public String[] getList() {
+    return list.toArray(new String[0]);
   }
 }
