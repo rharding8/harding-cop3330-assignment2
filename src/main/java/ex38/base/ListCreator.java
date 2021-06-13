@@ -1,3 +1,10 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Main Class
+
 package ex38.base;
 
 import java.util.Arrays;
@@ -24,10 +31,10 @@ public class ListCreator {
     if (list.length == 0) {
       return "";
     }
-    String output = "" + list[0] ;
+    StringBuilder output = new StringBuilder("" + list[0]);
     for (i = 1; i < list.length; i++) {
-      output += " " + list[i];
+      output.append(" ").append(list[i]);
     }
-    return output;
+    return output.toString();
   }
 }

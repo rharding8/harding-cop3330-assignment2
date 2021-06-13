@@ -1,12 +1,20 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Helper Class
+
 package ex37.base;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class PasswordGen {
-  private int length;
-  private int special;
-  private int num;
+  private final int length;
+  private final int special;
+  private final int num;
 
   public PasswordGen(int length, int special, int num) {
     this.length = length;
@@ -50,12 +58,12 @@ public class PasswordGen {
   }
 
   public String getString(ArrayList<Character> charList) {
-    String output = "";
+    StringBuilder output = new StringBuilder();
     int i;
     for (i = 0; i < charList.size(); i++) {
-      output += charList.get(i);
+      output.append(charList.get(i));
     }
-    return output;
+    return output.toString();
   }
 
 }
