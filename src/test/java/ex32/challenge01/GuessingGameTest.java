@@ -28,7 +28,58 @@ class GuessingGameTest {
   }
 
   @Test
-  void message() {
-    // Come Back To This!!
+  void message_mind_reader() {
+    GuessingGame game = new GuessingGame(2);
+    String expected = "You got it in 1 guess! You're a mind reader!";
+    String actual = game.message(1);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void message_impressive2() {
+    GuessingGame game = new GuessingGame(2);
+    String expected = "You got it in 2 guesses! Most impressive.";
+    String actual = game.message(2);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void message_impressive3() {
+    GuessingGame game = new GuessingGame(2);
+    String expected = "You got it in 3 guesses! Most impressive.";
+    String actual = game.message(3);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void message_better4() {
+    GuessingGame game = new GuessingGame(2);
+    String expected = "You got it in 4 guesses! You can do better than that.";
+    String actual = game.message(4);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void message_better5() {
+    GuessingGame game = new GuessingGame(2);
+    String expected = "You got it in 5 guesses! You can do better than that.";
+    String actual = game.message(5);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void message_better6() {
+    GuessingGame game = new GuessingGame(2);
+    String expected = "You got it in 6 guesses! You can do better than that.";
+    String actual = game.message(6);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void message_luck() {
+    GuessingGame game = new GuessingGame(2);
+    String expected = "You got it in 9 guesses! Better luck next time.";
+    String actual = game.message(9);
+    assertEquals(expected, actual);
   }
 }

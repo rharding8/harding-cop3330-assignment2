@@ -3,6 +3,8 @@
  *  Copyright 2021 Ryan Harding
  */
 
+// Helper Class
+
 package ex27.base;
 
 public class IdValidator {

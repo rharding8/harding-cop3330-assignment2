@@ -1,3 +1,12 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Main Class
+// In Addition to challenge01, this version of the program is also more easily testable, so it is the basis for
+// The Test Cases
+
 package ex32.challenge01;
 
 import java.util.Scanner;

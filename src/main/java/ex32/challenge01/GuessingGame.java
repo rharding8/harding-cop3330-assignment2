@@ -1,3 +1,10 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Helper Class
+
 package ex32.challenge01;
 
 import java.util.Scanner;
@@ -48,7 +55,8 @@ public class GuessingGame {
   }
 
   public String message(int count) {
-    String output = "You got it in " + count + " guesses! ";
+    String output = "You got it in " + count + " guess";
+    output += count > 1 ? "es! " : "! ";
     switch (count) {
       case 1 -> output += "You're a mind reader!";
       case 2, 3 -> output += "Most impressive.";
