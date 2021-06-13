@@ -58,6 +58,10 @@ public class IdValidator {
 
   public String validateEmp() {
     int i = 0;
+
+    if (empID.length() != 7) {
+      return String.format("%s is not a valid ID.%n", empID);
+    }
     while (i < 2) {
       if (!Character.isLetter(empID.charAt(i))) {
         return String.format("%s is not a valid ID.%n", empID);

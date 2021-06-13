@@ -10,7 +10,7 @@ public class Lottery {
   public static void main(String[] args) {
     Lottery lotto = new Lottery();
     lotto.enterContest();
-    lotto.getWinner();
+    lotto.outputWinner();
   }
 
   public void enterContest() {
@@ -30,10 +30,14 @@ public class Lottery {
     }
   }
 
-  public void getWinner() {
+  public void outputWinner() {
+    System.out.printf("And the winner is... [drumroll]... %s!%n", getWinner());
+  }
+
+  public String getWinner() {
     int min = 0;
     int max = contestants.size() - 1;
     int winningIndex = (int) Math.floor(Math.random() * (max - min + 1) + min);
-    System.out.printf("And the winner is... [drumroll]... %s!%n", contestants.get(winningIndex));
+    return contestants.get(winningIndex);
   }
 }

@@ -14,15 +14,25 @@ public class Addition {
 
   public static void main(String[] args) {
     Addition add = new Addition();
-    System.out.println("The total is: " + add.sum(5));
+    int[] num = add.numbers(5);
+    System.out.println("The total is: " + add.sum(num));
   }
 
-  public int sum(int n) {
-    int sum = 0;
+  public int[] numbers(int n) {
+    int[] num = new int[n];
     int i;
     for (i = 0; i < n; i++) {
       System.out.print("Enter a number: ");
-      sum += input.nextInt();
+      num[i] = input.nextInt();
+    }
+    return num;
+  }
+
+  public int sum(int[] numbers) {
+    int sum = 0;
+    int i;
+    for (i = 0; i < numbers.length; i++) {
+      sum += numbers[i];
     }
     return sum;
   }

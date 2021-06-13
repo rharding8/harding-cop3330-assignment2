@@ -15,11 +15,12 @@ public class Addition {
 
   public static void main(String[] args) {
     Addition add = new Addition();
-    System.out.println("The total is: " + add.sum(add.howMany()));
+    int[] num = add.numbers(add.howMany());
+    System.out.println("The total is: " + add.sum(num));
   }
 
-  public int sum(int n) {
-    int sum = 0;
+  public int[] numbers(int n) {
+    int[] num = new int[n];
     String temp;
     int i;
     for (i = 0; i < n; i++) {
@@ -31,9 +32,9 @@ public class Addition {
       catch (NumberFormatException e) {
         continue;
       }
-      sum += Integer.parseInt(temp);
+      num[i] = Integer.parseInt(temp);
     }
-    return sum;
+    return num;
   }
 
   public int howMany() {
@@ -47,5 +48,14 @@ public class Addition {
       return howMany();
     }
     return Integer.parseInt(n);
+  }
+
+  public int sum(int[] numbers) {
+    int sum = 0;
+    int i;
+    for (i = 0; i < numbers.length; i++) {
+      sum += numbers[i];
+    }
+    return sum;
   }
 }
