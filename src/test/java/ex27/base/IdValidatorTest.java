@@ -1,3 +1,11 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Test for Methods Contained in Helper Class "IdValidator"
+// The Main Class has only input/output methods, so testing was unnecessary for that class.
+
 package ex27.base;
 
 import org.junit.jupiter.api.Test;

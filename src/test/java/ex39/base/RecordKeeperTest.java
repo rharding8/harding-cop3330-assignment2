@@ -1,3 +1,10 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Test of Methods in Helper Class "RecordKeeper" used in ex39 and ex40
+
 package ex39.base;
 
 import org.junit.jupiter.api.Test;

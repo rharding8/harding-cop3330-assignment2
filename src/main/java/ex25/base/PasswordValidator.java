@@ -7,6 +7,7 @@
 
 package ex25.base;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class PasswordValidator {
   private final String pw;
 

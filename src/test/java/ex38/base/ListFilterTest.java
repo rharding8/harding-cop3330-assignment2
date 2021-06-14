@@ -1,3 +1,10 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Test for Helper Class "ListFilter" Methods
+
 package ex38.base;
 
 import org.junit.jupiter.api.Test;

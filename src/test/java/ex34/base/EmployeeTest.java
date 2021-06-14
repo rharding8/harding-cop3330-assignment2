@@ -1,3 +1,11 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Test for Helper Class "Employee"
+// Main Class EmployeeManager only uses input and output, not needing specific testing.
+
 package ex34.base;
 
 import org.junit.jupiter.api.Test;

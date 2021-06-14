@@ -7,11 +7,12 @@
 
 package ex27.base;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class IdValidator {
-  private String firstName;
-  private String lastName;
-  private String zipCode;
-  private String empID;
+  private final String firstName;
+  private final String lastName;
+  private final String zipCode;
+  private final String empID;
 
   public IdValidator(String firstName, String lastName, String zipCode, String empID) {
     this.firstName = firstName;

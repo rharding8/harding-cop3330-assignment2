@@ -1,3 +1,11 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Test for Helper Class "GuessingGame"
+// GuessingApp is only the Input/Output interface for this class, all testable methods are included.
+
 package ex32.challenge01;
 
 import org.junit.jupiter.api.Test;

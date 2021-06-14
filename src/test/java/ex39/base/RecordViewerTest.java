@@ -1,3 +1,11 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
+// Test for Methods in Main Class "RecordViewer" from ex39, all of which also apply to
+// Main Class "RecordFilter" in ex40.
+
 package ex39.base;
 
 import org.junit.jupiter.api.Test;
